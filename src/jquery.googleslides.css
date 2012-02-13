@@ -1,0 +1,36 @@
+.picasaSlides {
+	padding: 3px;
+	min-width:75px;
+	min-height:75px;
+}
+
+.picasaSlides.loading {
+	background:url(images/spinner.gif) no-repeat center center;
+}
+
+.picasaSlide  {
+	display:none;
+	position:relative;
+}
+
+.picasaSlide a:link {
+	text-decoration:none;
+}
+
+.picasaSlide .captionWrapper {
+	background-color:black;
+	color:white;
+	opacity:0.5;
+	filter:alpha(opacity=50); /* For IE8 and earlier */
+	height:30px;
+	padding:0;
+	bottom:5px;
+	width:100%;
+	overflow:none;
+	position:absolute;	
+}
+
+.picasaSlide .caption
+{
+	padding:5px;	
+}

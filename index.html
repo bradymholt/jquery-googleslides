@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+	<link  href="src/jquery.googleslides.css" rel="stylesheet" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	<script src="src/jquery.googleslides.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#demo1").picasaSlides( {
+				user : '115528839112598673902', 
+				albumid: '5708733709522191137'
+			});
+			$("#demo2").picasaSlides( {
+				user : '115528839112598673902', 
+				albumid: '5708746270943603681', 				
+				imgmax: 100,
+				fadespeed: 500,
+				time: 8000,
+				caption : false
+			});
+			$("#demo3").picasaSlides( {
+				user : '115528839112598673902', 
+				albumid: '5708757017692613217', 				
+				time:2000,
+				imgmax: 260,
+				loadingimage: false
+			});
+		});
+	</script>
+</head>
+<body>
+	<h1>jQuery.googleslides</h1>
+	<p>A jQuery plugin to display your Google Photos, including Picasa and Google+ albums.
+	<h2>Demos</h2>
+	<h3>Demo 1</h3>
+	<pre>
+		$("#demo1").picasaSlides( {
+		  user : '115528839112598673902', 
+		  albumid: '5708733709522191137'
+		});
+	</pre>
+	<div id="demo1">
+	</div>
+	<h3>Demo 2</h3>
+	<pre>
+		$("#demo2").picasaSlides( {
+		  user : '115528839112598673902', 
+		  albumid: '5708746270943603681', 				
+		  imgmax: 100,
+		  fadespeed: 500,
+		  time: 8000,
+		  caption : false
+		});
+	</pre>
+	<div id="demo2">
+	</div>
+	<h3>Demo 3</h3>
+	<pre>
+		$("#demo3").picasaSlides( {
+		  user : '115528839112598673902', 
+		  albumid: '5708757017692613217', 				
+		  time:2000,
+		  imgmax: 260,
+		  loadingimage: false
+		});
+	</pre>
+	<div id="demo3">
+	</div>
+	<h2>Usage</h2>
+	<h2>Options</h2>
+	<h2>License</h2>
+	<p>MIT</p>
+</body>
+</html>
