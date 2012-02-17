@@ -40,33 +40,35 @@
             A jQuery plugin to display your Google Photos, including Picasa and Google+ albums.</p>
         <h2>
             Demos</h2>
-        <hr />
-        <h3>
-            Demo 1</h3>
-            
-        <div class="row">
-            <div class="span6">
-                <div id="demo1">
-                </div>
-            </div>
-            <div class="span6">
-                <pre>
+        <ul id="demoTabs" class="nav nav-tabs">
+            <li class="active"><a href="#demo1-tab" data-toggle="tab">Demo 1</a></li>
+            <li><a href="#demo2-tab" data-toggle="tab">Demo 2</a></li>
+            <li><a href="#demo3-tab" data-toggle="tab">Demo 3</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="demo1-tab">
+                <div class="row">
+                    <div class="span6">
+                        <div id="demo1">
+                        </div>
+                    </div>
+                    <div class="span6">
+                        <pre>
 $("#demo1").picasaSlides( {
   user : '115528839112598673902', 
   albumid: '5708733709522191137'
 });</pre>
-            </div>
-        </div>
-        <hr />
-        <h3>
-            Demo 2</h3>
-        <div class="row">
-            <div class="span6">
-                <div id="demo2">
+                    </div>
                 </div>
             </div>
-            <div class="span6">
-                <pre>
+            <div class="tab-pane" id="demo2-tab">
+                <div class="row">
+                    <div class="span6">
+                        <div id="demo2">
+                        </div>
+                    </div>
+                    <div class="span6">
+                        <pre>
 $("#demo2").picasaSlides( {
   user : '115528839112598673902', 
   albumid: '5708746270943603681', 				
@@ -75,24 +77,25 @@ $("#demo2").picasaSlides( {
   time: 8000,
   caption : false
 });</pre>
-            </div>
-        </div>
-        <hr />
-        <h3>
-            Demo 3</h3>
-        <div class="row">
-            <div class="span6">
-                <div id="demo3">
+                    </div>
                 </div>
             </div>
-            <div class="span6">
-                <pre> $("#demo3").picasaSlides( { 
+            <div class="tab-pane" id="demo3-tab">
+                <div class="row">
+                    <div class="span6">
+                        <div id="demo3">
+                        </div>
+                    </div>
+                    <div class="span6">
+                        <pre> $("#demo3").picasaSlides( { 
                  user : '115528839112598673902', 
                  albumid: '5708757017692613217', 
                  time:2000, 
                  imgmax: 260,
                  loadingimage: false 
                 });</pre>
+                    </div>
+                </div>
             </div>
         </div>
         <h2>
@@ -152,5 +155,6 @@ $("#demo2").picasaSlides( {
             TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
             USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
     </div>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-tab.js"></script>
 </body>
 </html>

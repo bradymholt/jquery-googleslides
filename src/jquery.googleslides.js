@@ -1,28 +1,42 @@
 ﻿(function( $ ){
+	var defaults = {
+			  'user'			 : '',
+			  'albumid'			 : '',
+			  'imgmax'           : 460,
+			  'maxresults'		 : 100,
+			  'random'			 : true,
+			  'caption'			 : true,
+			  'loadingimage'     : true,
+			  'albumlink'		 : true,
+			  'time'	 		 : 5000,
+			  'fadespeed'		 : 1000
+	};
+			
 	var methods = {
 		init: function (options) {
-			this.attr('albumid', options.albumid);
+		    var settings = $.extend({}, defaults, options);
+			this.attr('albumid', settings.albumid);
 			this.addClass('picasaSlides');
-			this.width(options.imgmax);
+			this.width(settings.imgmax);
 			
-			if  (options.loadingimage === true) {
+			if  (settings.loadingimage === true) {
 				this.addClass('loading');
 			}
 			
-			var albumJsonUrl = '<script src="https://picasaweb.google.com/data/feed/base/user/' + options.user + '/albumid/' + options.albumid 
-				+ '?alt=json&kind=photo&max-results=' + options.maxresults + '&hl=en_US&imgmax=' + options.imgmax 
-				+ '&callback=jQuery.fn.picasaSlides.prepare_' + options.albumid + '&fields=link,entry(link,media:group(media:content,media:description))">' 
+			var albumJsonUrl = '<script src="https://picasaweb.google.com/data/feed/base/user/' + settings.user + '/albumid/' + settings.albumid 
+				+ '?alt=json&kind=photo&max-results=' + settings.maxresults + '&hl=en_US&imgmax=' + settings.imgmax 
+				+ '&callback=jQuery.fn.picasaSlides.prepare_' + settings.albumid + '&fields=link,entry(link,media:group(media:content,media:description))">' 
 				+ '</sc' + 'ript>';
 			
-			eval('jQuery.fn.picasaSlides.prepare_' + options.albumid 
-				+ ' = function(data) { $(".picasaSlides[albumid=' + options.albumid + ']").picasaSlides("prepare", data); };');
+			var prepareFunCallback = 'jQuery.fn.picasaSlides.prepare_' + settings.albumid 
+				+ ' = function(data) { $(".picasaSlides[albumid=' + settings.albumid + ']").picasaSlides("prepare", data); };';
+			eval(prepareFunCallback);
 			
-			this.data('picasaSlidesOptions', options);
-			
+			this.data('picasaSlidesOptions', settings);
 			$('body').append(albumJsonUrl);
 		},
 		prepare: function (data) {
-			var options = this.data('picasaSlidesOptions');
+			var settings = this.data('picasaSlidesOptions');
 			var i = data.feed.entry.length;
 			var item, url, link, caption, slide;
 			var slides = [];
@@ -33,21 +47,21 @@
 				caption = item.media$group.media$description.$t;
 				slide = $('<div class="picasaSlide"></div>');
 				var slideInner = slide;
-				if (options.albumlink == true) {
+				if (settings.albumlink == true) {
 					slide.append($('<a target="_blank" href="' + link + '"></a>'));
 					slideInner = slide.children().first();
 				}
 				
 				slideInner.append($('<img src="' + url + '" alt="' + caption + '"/>'));
 				
-				if (options.caption == true && caption != '') {
+				if (settings.caption == true && caption != '') {
 					slideInner.append('<div class="captionWrapper"><div class="caption">' + caption + '</div></div>');
 				}
 				
 				slides.push(slide);
 			}
 			
-			if (options.random == true) {
+			if (settings.random == true) {
 				slides.sort(methods.randomSort);
 			}
 			
@@ -61,44 +75,29 @@
 			return (0.5 - Math.random());
 		},
 		start: function () {
-			var options = this.data('picasaSlidesOptions');
-			var fadespeed = options.fadespeed;
-			var time = options.time;
+			var settings = this.data('picasaSlidesOptions');
 			
-			$(this).find('.picasaSlide').first().fadeIn(fadespeed);
+			this.find('.picasaSlide').first().fadeIn(settings.fadespeed);
 				var target = $(this);
 				setInterval(function() {
 				  var first = target.find('.picasaSlide').first();
-				  first.fadeOut(fadespeed, function() { 
-						first.next().fadeIn(fadespeed, function() {
+				  first.fadeOut(settings.fadespeed, function() { 
+						first.next().fadeIn(settings.fadespeed, function() {
 							first.appendTo(target);
 						})
 					 })
-				 }, time);
+				 }, settings.time);
 		}
 	}
 
   $.fn.picasaSlides = function(method) {  
+		 // Method calling logic
 		if ( methods[method] ) {
-		    return methods[ method ].apply( this,  Array.prototype.slice.call( arguments, 1 ));
+		  return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
 		} else if ( typeof method === 'object' || ! method ) {
-			arguments[0] = $.extend(defaults, arguments[0]);
-		    return methods.init.apply(this, arguments);
+		  return methods.init.apply( this, arguments );
 		} else {
 		  $.error( 'Method ' +  method + ' does not exist on jQuery.tooltip' );
-		}   		
+		}    		
   };
-  
-  var defaults = {
-			  'user'			 : '',
-			  'albumid'			 : '',
-			  'imgmax'           : 460,
-			  'maxresults'		 : 100,
-			  'random'			 : true,
-			  'caption'			 : true,
-			  'loadingimage'     : true,
-			  'albumlink'		 : true,
-			  'time'	 		 : 5000,
-			  'fadespeed'		 : 1000
-			};
 })( jQuery );
