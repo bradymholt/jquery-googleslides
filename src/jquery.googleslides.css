@@ -16,8 +16,8 @@
 .picasaSlide .captionWrapper {
 	background-color:black;
 	color:white;
-	opacity:0.5;
-	filter:alpha(opacity=50); /* For IE8 and earlier */
+	opacity:0.6;
+	filter:alpha(opacity=60); /* For IE8 and earlier */
 	height:30px;
 	padding:0;
 	bottom:5px;
@@ -28,5 +28,6 @@
 
 .picasaSlide .caption
 {
-	padding:5px;	
+	padding: 5px 5px 5px 10px;	
+	
 }

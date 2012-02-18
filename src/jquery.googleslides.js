@@ -4,7 +4,7 @@
 
 (function( $ ){
 	var defaults = {
-			  'user'			 : '115528839112598673902',
+			  'userid'			 : '115528839112598673902',
 			  'albumid'			 : '5710317752556741025',
 			  'imgmax'           : 460,
 			  'maxresults'		 : 100,
@@ -29,7 +29,7 @@
 				this.attr('albumid', settings.albumid);
 				this.width(settings.imgmax);
 
-				var albumJsonUrl = '<script src="https://picasaweb.google.com/data/feed/base/user/' + settings.user + '/albumid/' + settings.albumid 
+				var albumJsonUrl = '<script src="https://picasaweb.google.com/data/feed/base/user/' + settings.userid + '/albumid/' + settings.albumid 
 					+ '?alt=json&kind=photo&max-results=' + settings.maxresults + '&hl=en_US&imgmax=' + settings.imgmax 
 					+ '&callback=jQuery.fn.picasaSlides.prepare_' + settings.albumid + '&fields=link,entry(link,media:group(media:content,media:description))">' 
 					+ '</sc' + 'ript>';
