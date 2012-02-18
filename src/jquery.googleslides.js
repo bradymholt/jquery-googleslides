@@ -1,12 +1,15 @@
-﻿(function( $ ){
+﻿// googleslides v1.10 - jQuery Google Slides plugin
+// (c) 2012 Brady Holt - www.geekytidbits.com
+// License: http://www.opensource.org/licenses/mit-license.php
+
+(function( $ ){
 	var defaults = {
-			  'user'			 : '',
-			  'albumid'			 : '',
+			  'user'			 : '115528839112598673902',
+			  'albumid'			 : '5710317752556741025',
 			  'imgmax'           : 460,
 			  'maxresults'		 : 100,
 			  'random'			 : true,
 			  'caption'			 : true,
-			  'loadingimage'     : true,
 			  'albumlink'		 : true,
 			  'time'	 		 : 5000,
 			  'fadespeed'		 : 1000
@@ -15,25 +18,29 @@
 	var methods = {
 		init: function (options) {
 		    var settings = $.extend({}, defaults, options);
-			this.attr('albumid', settings.albumid);
-			this.addClass('picasaSlides');
-			this.width(settings.imgmax);
-			
-			if  (settings.loadingimage === true) {
-				this.addClass('loading');
-			}
-			
-			var albumJsonUrl = '<script src="https://picasaweb.google.com/data/feed/base/user/' + settings.user + '/albumid/' + settings.albumid 
-				+ '?alt=json&kind=photo&max-results=' + settings.maxresults + '&hl=en_US&imgmax=' + settings.imgmax 
-				+ '&callback=jQuery.fn.picasaSlides.prepare_' + settings.albumid + '&fields=link,entry(link,media:group(media:content,media:description))">' 
-				+ '</sc' + 'ript>';
-			
-			var prepareFunCallback = 'jQuery.fn.picasaSlides.prepare_' + settings.albumid 
-				+ ' = function(data) { $(".picasaSlides[albumid=' + settings.albumid + ']").picasaSlides("prepare", data); };';
-			eval(prepareFunCallback);
-			
 			this.data('picasaSlidesOptions', settings);
-			$('body').append(albumJsonUrl);
+			
+			if ($('.picasaSlides[albumid=' + settings.albumid +']').length > 0) {
+				var error = 'jQuery.googleslides ERROR: albumid:' + settings.albumid + ' is already on the page.  Only one album per page is supported.';
+				this.text(error);
+				console.log(error);
+			}
+			else {
+				this.attr('albumid', settings.albumid);
+				this.width(settings.imgmax);
+
+				var albumJsonUrl = '<script src="https://picasaweb.google.com/data/feed/base/user/' + settings.user + '/albumid/' + settings.albumid 
+					+ '?alt=json&kind=photo&max-results=' + settings.maxresults + '&hl=en_US&imgmax=' + settings.imgmax 
+					+ '&callback=jQuery.fn.picasaSlides.prepare_' + settings.albumid + '&fields=link,entry(link,media:group(media:content,media:description))">' 
+					+ '</sc' + 'ript>';
+				
+				var prepareFunCallback = 'jQuery.fn.picasaSlides.prepare_' + settings.albumid 
+					+ ' = function(data) { $(".picasaSlides[albumid=' + settings.albumid + ']").picasaSlides("prepare", data); };';
+				eval(prepareFunCallback);
+				
+				this.addClass('picasaSlides');
+				$('body').append(albumJsonUrl);
+			}
 		},
 		prepare: function (data) {
 			var settings = this.data('picasaSlidesOptions');
@@ -77,16 +84,19 @@
 		start: function () {
 			var settings = this.data('picasaSlidesOptions');
 			
-			this.find('.picasaSlide').first().fadeIn(settings.fadespeed);
-				var target = $(this);
-				setInterval(function() {
-				  var first = target.find('.picasaSlide').first();
-				  first.fadeOut(settings.fadespeed, function() { 
-						first.next().fadeIn(settings.fadespeed, function() {
-							first.appendTo(target);
-						})
-					 })
-				 }, settings.time);
+			this.find('.picasaSlide').first().fadeIn(settings.fadespeed);	
+			
+			var target = this;
+			setInterval(function() {
+				var first = target.find('.picasaSlide').first();
+				//fade out with .animate() in case parent is hidden
+				first.animate({opacity:0}, settings.fadespeed, function() {
+					first.hide();
+					first.next().fadeIn(settings.fadespeed, function() {
+						first.appendTo(target);
+					})
+				})
+			 }, settings.time);
 		}
 	}
 

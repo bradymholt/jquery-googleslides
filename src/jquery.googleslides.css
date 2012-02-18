@@ -4,10 +4,6 @@
 	min-height:75px;
 }
 
-.picasaSlides.loading {
-	background:url(images/spinner.gif) no-repeat center center;
-}
-
 .picasaSlide  {
 	display:none;
 	position:relative;
