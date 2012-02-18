@@ -1,88 +1,191 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset='utf-8'>
-
-  <title>bradyholt/jquery-googleslides @ GitHub</title>
-
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #7e5b6c;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #81a493; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #81a493; }
-    h3 { text-align: center; color: #81a493; }
-    a { color: #81a493; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
+	<title>jQuery.googleslides</title>
+	
+    <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	<style type="text/css">body { margin-top:30px; }</style>
+    
+	<!--start jquery.googleslides-->
+		<link href="src/jquery.googleslides.css" rel="stylesheet" type="text/css" />
+		<script src="src/jquery.googleslides.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$("#demo1").picasaSlides({ user: '115528839112598673902', albumid: '5710317752556741025'});
+				$("#demo2").picasaSlides({ user: '115528839112598673902', albumid: '5710326335933432353',
+					time: 2000,
+					imgmax: 260					
+				});
+				$("#demo3").picasaSlides({ user: '115528839112598673902', albumid: '5710326910876169537',
+					imgmax: 100,
+					fadespeed: 500,
+					time: 8000,
+					caption: false
+				});
+			});
+		</script>
+	<!--end-->
 </head>
-
 <body>
-  <a href="https://github.com/bradyholt/jquery-googleslides"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-
-  <div id="container">
-
-    <div class="download">
-      <a href="https://github.com/bradyholt/jquery-googleslides/zipball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
-      <a href="https://github.com/bradyholt/jquery-googleslides/tarball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
+    <div class="container">
+		<div class="row">
+		<div class="span10">
+			<h1>
+				jQuery.googleslides</h1>
+			<p class="lead">
+				A jQuery plugin to display your Google Photos, including Picasa and Google+ albums.</p>
+		</div>
+		<div class="span2" id="downloadLinks">
+				<a class="btn btn-success" href="http://www.github.com"><i class="icon-download icon-white"></i> Download Now</a>
+		
+		</div>
+		</div>
+        <h2>
+            Demos</h2>
+        <ul id="demoTabs" class="nav nav-tabs">
+            <li class="active"><a href="#demo1-tab" data-toggle="tab">Demo 1</a></li>
+            <li><a href="#demo2-tab" data-toggle="tab">Demo 2</a></li>
+            <li><a href="#demo3-tab" data-toggle="tab">Demo 3</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="demo1-tab">
+                <div class="row">
+                    <div class="span6">
+                        <div id="demo1">
+                        </div>
+                    </div>
+                    <div class="span6">
+					<h3>Usage:</h3>
+<pre>$("#demo1").picasaSlides({
+  user:'115528839112598673902', 
+  albumid:'5710317752556741025'
+});</pre>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="demo2-tab">
+                <div class="row">
+                    <div class="span6">
+                        <div id="demo2">
+                        </div>
+                    </div>
+                    <div class="span6">
+					<h3>Usage:</h3>
+<pre>$("#demo2").picasaSlides( { 
+  user:'115528839112598673902', 
+  albumid:'5710326335933432353', 
+  time:2000, 
+  imgmax:260
+});</pre>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="demo3-tab">
+                <div class="row">
+                    <div class="span6">
+                        <div id="demo3">
+                        </div>
+                    </div>
+                    <div class="span6">
+					<h3>Usage:</h3>
+<pre>$("#demo3").picasaSlides({
+  user:'115528839112598673902', 
+  albumid:'5710326910876169537',
+  imgmax:100,
+  fadespeed:500,
+  time:8000,
+  caption:false
+});</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2>
+            Setup</h2>
+        <ol>
+            <li>Add a reference to <strong>jquery.googleslides.css</strong> and <strong>jquery.googleslides.js</strong>:
+<pre>
+&lt;link href="src/jquery.googleslides.css" rel="stylesheet" type="text/css" /&gt; 
+&lt;script src="src/jquery.googleslides.js" type="text/javascript"&gt;&lt;/script&gt;
+</pre>
+            </li>
+            <li>Add a container div <strong>&lt;div id='slides'&gt;&lt;/div&gt;</strong> element to your body.</li>
+            <li>Start the slides:
+<pre>
+$('#slides').picasaSlides({user:'115528839112598673902', albumid:'5710317752556741025'});
+</pre></li>
+        </ol>
+        <h2>
+            Options</h2>
+        <table class="table table-striped table-bordered table-condensed">
+            <thead>
+                <tr>
+                    <th>
+                        Property
+                    </th>
+					<th>
+                        Default
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                </tr>
+            </thead>
+			  <tr>
+                <td>user</td>
+                <td>'115528839112598673902'</td> 
+				<td>The Google user ID</td>
+            </tr>
+            <tr>
+                <td>albumid</td>
+                <td>'5710317752556741025'</td> 
+				<td>The Google album ID</td>
+            </tr>
+			 <tr>
+                <td>imgmax</td>
+                <td>460</td> 
+				<td>Max size, in pixels, of the photos.</td>
+            </tr>
+			 <tr>
+                <td>maxresults</td>
+                <td>100</td> 
+				<td>Max number of photos to show from album.</td>
+            </tr>
+			 <tr>
+                <td>random</td>
+                <td>true</td> 
+				<td>Randomize the order the photos are displayed in.</td>
+            </tr>
+			 <tr>
+                <td>caption</td>
+                <td>true</td> 
+				<td>Show the photo caption, if available.</td>
+            </tr>
+			<tr>
+                <td>albumlink</td>
+                <td>true</td> 
+				<td>Link the photos to the Google page.</td>
+            </tr>
+			<tr>
+                <td>time</td>
+                <td>5000</td> 
+				<td>Time, in milliseconds, to show each photo.</td>
+            </tr>
+			<tr>
+                <td>fadespeed</td>
+                <td>1000</td> 
+				<td>Fade in/out speed, in milliseconds.</td>
+            </tr>
+        </table>
+		<h2>Download</h2>
+		<p>Download from <a href="http://www.google.com">Github</a></p>
+        <h2>
+            License</h2>
+        <p>
+            Copyright &copy; 2012 Brady Holt</p>
+        <p>Licensed under The MIT License - <a target="_blank" href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a>
     </div>
-
-    <h1><a href="https://github.com/bradyholt/jquery-googleslides">jquery-googleslides</a>
-      <span class="small">by <a href="https://github.com/bradyholt">bradyholt</a></span></h1>
-
-    <div class="description">
-      A jQuery plugin to display your Google Photos including Picasa and Google+ albums.
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-      <h2>Authors</h2>
-      <p>Brady Holt (brady@geekytidbits.com)<br/>      </p>
-    
-
-    
-      <h2>Contact</h2>
-      <p>Brady Holt (brady@geekytidbits.com)<br/>      </p>
-    
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="https://github.com/bradyholt/jquery-googleslides/zipball/master">zip</a> or
-      <a href="https://github.com/bradyholt/jquery-googleslides/tarball/master">tar formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/bradyholt/jquery-googleslides</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="https://github.com/bradyholt/jquery-googleslides">bradyholt/jquery-googleslides</a>
-    </div>
-
-  </div>
-
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-tab.js"></script>
 </body>
 </html>
