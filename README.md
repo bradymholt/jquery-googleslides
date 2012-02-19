@@ -10,4 +10,3 @@ A jQuery plugin to display your Google Photos, including Picasa and Google+ albu
 ## Demo
 ---
 [http://bradyholt.github.com/jquery-googleslides/](http://bradyholt.github.com/jquery-googleslides/)
----
