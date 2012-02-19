@@ -27,7 +27,6 @@
 			}
 			else {
 				this.attr('albumid', settings.albumid);
-				this.width(settings.imgmax);
 
 				var albumJsonUrl = '<script src="https://picasaweb.google.com/data/feed/base/user/' + settings.userid + '/albumid/' + settings.albumid 
 					+ '?alt=json&kind=photo&max-results=' + settings.maxresults + '&hl=en_US&imgmax=' + settings.imgmax 
@@ -91,6 +90,7 @@
 				var first = target.find('.picasaSlide').first();
 				//fade out with .animate() in case parent is hidden
 				first.animate({opacity:0}, settings.fadespeed, function() {
+					first.css('opacity', '');
 					first.hide();
 					first.next().fadeIn(settings.fadespeed, function() {
 						first.appendTo(target);
