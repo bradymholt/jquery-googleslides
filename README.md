@@ -3,7 +3,7 @@ A jQuery plugin to display your Google Photos, including Picasa and Google+ albu
 
 ## Basic Usage
         $("#slidesContainer").googleslides({
-           user:'115528839112598673902', 
+           userid:'115528839112598673902', 
            albumid:'5710317752556741025'
         });
 		
