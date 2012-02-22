@@ -9,7 +9,7 @@
 	filter:alpha(opacity=60); /* For IE8 and earlier */
 	height:30px;
 	padding:0;
-	bottom:5px;
+	bottom:3px;
 	width:100%;
 	overflow:none;
 	position:absolute;	
