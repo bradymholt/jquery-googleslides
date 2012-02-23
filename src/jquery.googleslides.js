@@ -1,4 +1,4 @@
-﻿// googleslides - jQuery Google Slides plugin
+﻿// googleslides v1.1 - jQuery Google Slides plugin
 // (c) 2012 Brady Holt - www.geekytidbits.com
 // License: http://www.opensource.org/licenses/mit-license.php
 
@@ -37,6 +37,7 @@
 					+ ' = function(data) { $(".googleslides[albumid=' + settings.albumid + ']").googleslides("prepare", data); };';
 				eval(prepareFunCallback);
 				
+				this.width(settings.imgmax);
 				this.addClass('googleslides');
 				$('body').append(albumJsonUrl);
 			}
