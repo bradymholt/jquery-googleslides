@@ -37,7 +37,6 @@
 					+ ' = function(data) { $(".googleslides[albumid=' + settings.albumid + ']").googleslides("prepare", data); };';
 				eval(prepareFunCallback);
 				
-				//this.width(settings.imgmax);
 				this.addClass('googleslides');
 				$('body').append(albumJsonUrl);
 			}
