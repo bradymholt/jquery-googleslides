@@ -37,7 +37,7 @@
 					+ ' = function(data) { $(".googleslides[albumid=' + settings.albumid + ']").googleslides("prepare", data); };';
 				eval(prepareFunCallback);
 				
-				this.width(settings.imgmax);
+				//this.width(settings.imgmax);
 				this.addClass('googleslides');
 				$('body').append(albumJsonUrl);
 			}
@@ -61,8 +61,10 @@
 				
 				slideInner.append($('<img src="' + url + '" alt="' + caption + '"/>'));
 				
+				$("img", slideInner).width(settings.imgmax);
 				if (settings.caption == true && caption != '') {
 					slideInner.append('<div class="captionWrapper"><div class="caption">' + caption + '</div></div>');
+					$(".captionWrapper", slideInner).width(settings.imgmax);
 				}
 				
 				slides.push(slide);
