@@ -6,6 +6,7 @@
 	var defaults = {
 			  'userid'			 : '115528839112598673902',
 			  'albumid'			 : '5710317752556741025',
+			  'authkey' 		 : '',
 			  'imgmax'           : 460,
 			  'maxresults'		 : 100,
 			  'random'			 : true,
@@ -28,8 +29,14 @@
 			else {
 				this.attr('albumid', settings.albumid);
 
+                var authKeyStr = '';
+				if (settings.authkey != '') {
+                  authKeyStr = '&authkey=' + settings.authkey;
+                }
+
 				var albumJsonUrl = '<script src="https://picasaweb.google.com/data/feed/base/user/' + settings.userid + '/albumid/' + settings.albumid 
-					+ '?alt=json&kind=photo&max-results=' + settings.maxresults + '&hl=en_US&imgmax=' + settings.imgmax 
+					+ '?alt=json&kind=photo&max-results=' + settings.maxresults + '&hl=en_US&imgmax=' + settings.imgmax  
+					+ authKeyStr
 					+ '&callback=jQuery.fn.googleslides.prepare_' + settings.albumid + '&fields=link,entry(link,media:group(media:content,media:description))">' 
 					+ '</sc' + 'ript>';
 				
