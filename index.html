@@ -144,7 +144,7 @@ $('#slides').googleslides({userid:'115528839112598673902', albumid:'571031775255
             <tr>
                 <td>albumid</td>
                 <td>'5710317752556741025'</td> 
-				<td>The Google album ID.  <strong>This album must be marked for 'Public' sharing!</strong></td>
+				<td>The Google album ID.  <strong>This album should be set to 'Public' visibility.</strong>  'Limited' visibility is supported only if an <strong>authkey</strong> option value is specified.</td>
             </tr>
 			 <tr>
                 <td>imgmax</td>
@@ -180,6 +180,11 @@ $('#slides').googleslides({userid:'115528839112598673902', albumid:'571031775255
                 <td>fadespeed</td>
                 <td>1000</td> 
 				<td>Fade in/out speed (in milliseconds).</td>
+            </tr>
+			<tr>
+                <td>authkey</td>
+                <td></td> 
+				<td>If albumid is shared with 'Limited' visibility, you must provide your album <a href="http://support.google.com/picasa/bin/answer.py?hl=en&answer=48446" target="_blank">authkey</a>.</td>
             </tr>
         </table>
 		<h2>Download</h2>
