@@ -52,11 +52,13 @@
 		prepare: function (data) {
 			var settings = this.data('googleslidesOptions');
 			var i = data.feed.entry.length;
-			var item, url, link, caption, slide;
+			var item, url, link, caption, slide, height, width;
 			var slides = [];
 			while (i--) {
 				item = data.feed.entry[i];
 				url = item.media$group.media$content[0].url;
+				height = item.media$group.media$content[0].height;
+				width = item.media$group.media$content[0].width;
 				link = item.link[1].href;
 				caption = item.media$group.media$description.$t;
 				slide = $('<div class="googleslide"></div>');
@@ -67,8 +69,9 @@
 				}
 				
 				slideInner.append($('<img src="' + url + '" alt="' + caption + '"/>'));
+
+				$("img", slideInner).width(width).height(height);
 				
-				$("img", slideInner).width(settings.imgmax);
 				if (settings.caption == true && caption != '') {
 					slideInner.append('<div class="captionWrapper"><div class="caption">' + caption + '</div></div>');
 					$(".captionWrapper", slideInner).width(settings.imgmax);
@@ -84,6 +87,11 @@
 			for (var i = 0; i < slides.length; i++) {
 				this.append(slides[i]);
 			}
+			
+			//set height/width of container so that it is just big enough to contain all the images
+			this.height(Math.max.apply(Math, $('.googleslide img', this).map(function(){ return $(this).height(); }).get()) + 2);
+			
+			this.width(Math.max.apply(Math, $('.googleslide img', this).map(function(){ return $(this).width(); }).get()) + 2);
 			
 			this.googleslides('start');
 		},
