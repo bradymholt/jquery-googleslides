@@ -1,4 +1,4 @@
-# jQuery.googleslides  
+# jQuery googleslides  
 A jQuery plugin to display your Google Photos, including Picasa and Google+ albums.
 
 __Documentation and Demos__ - [http://bradyholt.github.com/jquery-googleslides/](http://bradyholt.github.com/jquery-googleslides/)

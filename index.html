@@ -1,95 +1,116 @@
 <!doctype html>
 <html>
 <head>
-	<title>jQuery.googleslides</title>
+	<title>jQuery googleslides</title>
 	
-    <link href="http://bradyholt.github.com/jquery-googleslides/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-	<style type="text/css">body { margin-top:30px; } h2 { margin-top:8px; margin-bottom:5px;  }</style>
+    <style type="text/css">
+        body { margin-top:30px; } 
+        h2 { margin-top:8px; margin-bottom:5px; } 
+        form.inline { display: inline; }
+        .btn { margin-right:15px;}
+    </style>
     
-	<!--start jquery.googleslides-->
-		<link href="src/jquery.googleslides.css" rel="stylesheet" type="text/css" />
-		<script src="src/jquery.googleslides.js" type="text/javascript"></script>
-		<script type="text/javascript">
-			$(document).ready(function () {
-				$("#demo1").googleslides({ userid: '115528839112598673902', albumid: '5710317752556741025'});
-				$("#demo2").googleslides({ userid: '115528839112598673902', albumid: '5710326335933432353',
-					time: 2000,
-					imgmax: 260					
-				});
-				$("#demo3").googleslides({ userid: '115528839112598673902', albumid: '5710326910876169537',
-					imgmax: 100,
-					fadespeed: 500,
-					time: 8000,
-					caption: false
-				});
-			});
-		</script>
-	<!--end-->
+    <!--start jquery.googleslides-->
+    <link href="src/jquery.googleslides.css" rel="stylesheet" type="text/css" />
+    <script src="src/jquery.googleslides.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $("#demo1").googleslides({ userid: '115528839112598673902', albumid: '5710317752556741025'});
+        $("#demo2").googleslides({ userid: '115528839112598673902', albumid: '5710326335933432353',
+         time: 2000,
+         imgmax: 260					
+     });
+        $("#demo3").googleslides({ userid: '115528839112598673902', albumid: '5710326910876169537',
+         imgmax: 100,
+         fadespeed: 500,
+         time: 8000,
+         caption: false
+     });
+    });
+    </script>
+    <!--end-->
 </head>
 <body>
-	<a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+	<a href="https://github.com/bradyholt/jquery-googleslides"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
     <div class="container">
-		<div class="row">
-		<div class="span10">
-			<h1>
-				jQuery.googleslides</h1>
-			<p class="lead">
-				A jQuery plugin to display your Google Photos, including Picasa and Google+ albums.</p>
-		</div>
-		<div class="span2" id="downloadLinks">
-				<a class="btn btn-success" href="https://github.com/bradyholt/jquery-googleslides/zipball/v1.3"><i class="icon-download icon-white"></i> Download Now</a>
-		</div>
-		</div>
+      <div class="row">
+          <div class="span12">
+           <h1>
+            jQuery googleslides</h1>
+            <p class="lead">
+                A jQuery plugin to display your Google Photos, including Picasa and Google+ albums.</p>
+            </div>
+        </div>
+         <a class="btn btn-success btn-large" href="https://github.com/bradyholt/jquery-googleslides/zipball/v1.3"><i class="icon-download icon-white"></i>&nbsp;Download Now</a>
+            <a class="btn btn-large" href="https://github.com/bradyholt/jquery-googleslides"><i class="icon-github"></i>&nbsp;Browse Source</a>
+           <form class="inline" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" >
+            <input type="hidden" name="cmd" value="_donations">
+            <input type="hidden" name="business" value="brady.holt@gmail.com">
+            <input type="hidden" name="lc" value="US">
+            <input type="hidden" name="item_name" value="Brady Holt">
+            <input type="hidden" name="item_number" value="jQuery googleslides">
+            <input type="hidden" name="no_note" value="0">
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHostedGuest">
+            <button class="btn btn-warning btn-large" type="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <i class="icon-money icon-large"></i>&nbsp;Donate
+            </button>
+            </form>
+
         <h2>
             Demos</h2>
-        <ul id="demoTabs" class="nav nav-tabs">
-            <li class="active"><a href="#demo1-tab" data-toggle="tab">Demo 1</a></li>
-            <li><a href="#demo2-tab" data-toggle="tab">Demo 2</a></li>
-            <li><a href="#demo3-tab" data-toggle="tab">Demo 3</a></li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane active" id="demo1-tab">
-                <div class="row">
-                    <div class="span6">
-                        <div id="demo1">
+            <ul id="demoTabs" class="nav nav-tabs">
+                <li class="active"><a href="#demo1-tab" data-toggle="tab">Demo 1</a></li>
+                <li><a href="#demo2-tab" data-toggle="tab">Demo 2</a></li>
+                <li><a href="#demo3-tab" data-toggle="tab">Demo 3</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="demo1-tab">
+                    <div class="row">
+                        <div class="span6">
+                            <div id="demo1">
+                            </div>
                         </div>
-                    </div>
-                    <div class="span6">
-					<h3>Usage:</h3>
-<pre>$("#demo1").googleslides({
-  userid:'115528839112598673902', 
-  albumid:'5710317752556741025'
-});</pre>
+                        <div class="span6">
+                         <h3>Usage:</h3>
+ <pre>
+$("#demo1").googleslides({
+   userid:'115528839112598673902', 
+   albumid:'5710317752556741025'
+});
+</pre>
+                  </div>
+              </div>
+          </div>
+          <div class="tab-pane" id="demo2-tab">
+            <div class="row">
+                <div class="span6">
+                    <div id="demo2">
                     </div>
                 </div>
-            </div>
-            <div class="tab-pane" id="demo2-tab">
-                <div class="row">
-                    <div class="span6">
-                        <div id="demo2">
-                        </div>
-                    </div>
-                    <div class="span6">
-					<h3>Usage:</h3>
-<pre>$("#demo2").googleslides( { 
+                <div class="span6">
+                 <h3>Usage:</h3>
+ <pre>$("#demo2").googleslides( { 
   userid:'115528839112598673902', 
   albumid:'5710326335933432353', 
   time:2000, 
   imgmax:260
 });</pre>
-                    </div>
-                </div>
+          </div>
+      </div>
+  </div>
+  <div class="tab-pane" id="demo3-tab">
+    <div class="row">
+        <div class="span6">
+            <div id="demo3">
             </div>
-            <div class="tab-pane" id="demo3-tab">
-                <div class="row">
-                    <div class="span6">
-                        <div id="demo3">
-                        </div>
-                    </div>
-                    <div class="span6">
-					<h3>Usage:</h3>
-<pre>$("#demo3").googleslides({
+        </div>
+        <div class="span6">
+         <h3>Usage:</h3>
+ <pre>$("#demo3").googleslides({
   userid:'115528839112598673902', 
   albumid:'5710326910876169537',
   imgmax:100,
@@ -97,114 +118,105 @@
   time:8000,
   caption:false
 });</pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <h2>
-            Setup</h2>
-        <ol>
-            <li>Add a reference to <strong>jquery.googleslides.css</strong> and <strong>jquery.googleslides.js</strong>:
+  </div>
+</div>
+</div>
+</div>
+<h2>
+    Setup</h2>
+    <ol>
+        <li>Add a reference to <strong>jquery.googleslides.css</strong> and <strong>jquery.googleslides.js</strong>:
 <pre>
 &lt;link href="src/jquery.googleslides.css" rel="stylesheet" type="text/css" /&gt; 
 &lt;script src="src/jquery.googleslides.js" type="text/javascript"&gt;&lt;/script&gt;
 </pre>
-            </li>
-            <li>Add a container div <strong>&lt;div id='slides'&gt;&lt;/div&gt;</strong> element to your body.</li>
-            <li>Start the slides:
+        </li>
+        <li>Add a container div <strong>&lt;div id='slides'&gt;&lt;/div&gt;</strong> element to your body.</li>
+        <li>Start the slides:
 <pre>
 $('#slides').googleslides({userid:'115528839112598673902', albumid:'5710317752556741025'});
-</pre></li>
+</pre>
+    </li>
         </ol>
-		<h2>Finding your userid and albumid</h2>
-		<p>To find your user and albumid, you should open the album directly from the Google+ or Picasa page.  When the album comes up you will see the user and
-			albumid in Url.  <strong>Any album you want to display with this plugin must be marked for 'Public' sharing from Google.</strong>
-		<div><img src="http://bradyholt.github.com/jquery-googleslides/assets/img/user_albumid.png" alt="user and albumid"/></div>
-        <h2>
+        <h2>Finding your userid and albumid</h2>
+        <p>To find your user and albumid, you should open the album directly from the Google+ or Picasa page.  When the album comes up you will see the user and
+           albumid in Url.  <strong>Any album you want to display with this plugin must be marked for 'Public' sharing from Google.</strong>
+           <div><img alt="" src="data:image/png;base64,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" /></div>
+           <h2>
             Options</h2>
-        <table class="table table-striped table-bordered table-condensed">
-            <thead>
+            <table class="table table-striped table-bordered table-condensed">
+                <thead>
+                    <tr>
+                        <th>
+                            Property
+                        </th>
+                        <th>
+                            Default
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                    </tr>
+                </thead>
                 <tr>
-                    <th>
-                        Property
-                    </th>
-					<th>
-                        Default
-                    </th>
-                    <th>
-                        Description
-                    </th>
+                    <td>userid</td>
+                    <td>'115528839112598673902'</td> 
+                    <td>The Google user ID</td>
                 </tr>
-            </thead>
-			  <tr>
-                <td>userid</td>
-                <td>'115528839112598673902'</td> 
-				<td>The Google user ID</td>
-            </tr>
-            <tr>
-                <td>albumid</td>
-                <td>'5710317752556741025'</td> 
-				<td>The Google album ID.  <strong>This album should be set to 'Public' visibility.</strong>  'Limited' visibility is supported only if an <strong>authkey</strong> option value is specified.</td>
-            </tr>
-			 <tr>
-                <td>imgmax</td>
-                <td>460</td> 
-				<td>Max size, in pixels, of the photos.  (Note: A value of 100 will produce square sized thumbnails.)</td>
-            </tr>
-			 <tr>
-                <td>maxresults</td>
-                <td>100</td> 
-				<td>Max number of photos to show from the album.</td>
-            </tr>
-			 <tr>
-                <td>random</td>
-                <td>true</td> 
-				<td>Randomize the order the photos are displayed in.</td>
-            </tr>
-			 <tr>
-                <td>caption</td>
-                <td>true</td> 
-				<td>Show the photo caption, if available.</td>
-            </tr>
-			<tr>
-                <td>albumlink</td>
-                <td>true</td> 
-				<td>Link the photos to the Google album page.</td>
-            </tr>
-			<tr>
-                <td>time</td>
-                <td>5000</td> 
-				<td>Time to show each photo before advancing (in milliseconds).</td>
-            </tr>
-			<tr>
-                <td>fadespeed</td>
-                <td>1000</td> 
-				<td>Fade in/out speed (in milliseconds).</td>
-            </tr>
-			<tr>
-                <td>authkey</td>
-                <td></td> 
-				<td>If albumid is shared with 'Limited' visibility, you must provide your album <a href="http://support.google.com/picasa/bin/answer.py?hl=en&answer=48446" target="_blank">authkey</a>.</td>
-            </tr>
-        </table>
-		<h2>Download</h2>
-		 <a class="btn btn-success" href="https://github.com/bradyholt/jquery-googleslides/zipball/v1.3"><i class="icon-download icon-white"></i>&nbsp;Download Now</a>
-		 <a class="btn" href="https://github.com/bradyholt/jquery-googleslides"><i class="icon-search"></i>&nbsp;Browse Source</a>
-        <h2>Donate</h2>
-		<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-		<input type="hidden" name="cmd" value="_s-xclick">
-		<input type="hidden" name="hosted_button_id" value="62R2LTY2NM6BS">
-		<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-		<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-		</form>
-		<h2>WordPress Plugin</h2>
-		There is a WordPress plugin available for jQuery.googleslides.  <a href="http://wordpress.org/extend/plugins/jquery-googleslides/">View the plugin page.</a>
-		<h2>
+                <tr>
+                    <td>albumid</td>
+                    <td>'5710317752556741025'</td> 
+                    <td>The Google album ID.  <strong>This album should be set to 'Public' visibility.</strong>  'Limited' visibility is supported only if an <strong>authkey</strong> option value is specified.</td>
+                </tr>
+                <tr>
+                    <td>imgmax</td>
+                    <td>460</td> 
+                    <td>Max size, in pixels, of the photos.  (Note: A value of 100 will produce square sized thumbnails.)</td>
+                </tr>
+                <tr>
+                    <td>maxresults</td>
+                    <td>100</td> 
+                    <td>Max number of photos to show from the album.</td>
+                </tr>
+                <tr>
+                    <td>random</td>
+                    <td>true</td> 
+                    <td>Randomize the order the photos are displayed in.</td>
+                </tr>
+                <tr>
+                    <td>caption</td>
+                    <td>true</td> 
+                    <td>Show the photo caption, if available.</td>
+                </tr>
+                <tr>
+                    <td>albumlink</td>
+                    <td>true</td> 
+                    <td>Link the photos to the Google album page.</td>
+                </tr>
+                <tr>
+                    <td>time</td>
+                    <td>5000</td> 
+                    <td>Time to show each photo before advancing (in milliseconds).</td>
+                </tr>
+                <tr>
+                    <td>fadespeed</td>
+                    <td>1000</td> 
+                    <td>Fade in/out speed (in milliseconds).</td>
+                </tr>
+                <tr>
+                    <td>authkey</td>
+                    <td></td> 
+                    <td>If albumid is shared with 'Limited' visibility, you must provide your album <a href="http://support.google.com/picasa/bin/answer.py?hl=en&answer=48446" target="_blank">authkey</a>.</td>
+                </tr>
+            </table>
+          <h2>WordPress Plugin</h2>
+          There is a WordPress plugin available for jQuery googleslides.  <a href="http://wordpress.org/extend/plugins/jquery-googleslides/">View the plugin page.</a>
+          <h2>
             License</h2>
-        <p>
-            Copyright &copy; 2012 Brady Holt</p>
-        <p>Licensed under The MIT License - <a target="_blank" href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a>
-    </div>
-    <script src="http://bradyholt.github.com/jquery-googleslides/assets/js/bootstrap-tab.js"></script>
-</body>
-</html>
+            <p>
+                Copyright &copy; 2013 Brady Holt</p>
+                <p>Licensed under The MIT License - <a target="_blank" href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a>
+                </div>
+                <script src="http://bradyholt.github.com/jquery-googleslides/assets/js/bootstrap-tab.js"></script>
+            </body>
+            </html>
