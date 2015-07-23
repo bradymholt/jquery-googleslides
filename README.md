@@ -11,5 +11,5 @@ Basic Usage
     	$("#slidesContainer").googleslides({
            userid:'115528839112598673902', 
            albumid:'5710317752556741025'
-        });
+     });
 
