@@ -2,20 +2,20 @@
 <html>
 <head>
 	<title>jQuery googleslides</title>
-	
-    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <style type="text/css">
-        body { margin: 30px 10px;} 
-        h2 { margin-top:8px; margin-bottom:5px; } 
+        body { margin: 30px 10px;}
+        h2 { margin-top:8px; margin-bottom:5px; }
         form.inline { display: inline; }
         .btn { margin-right:15px;}
         #license, #history { display:inline-block; width:49%;}
         #history { text-align: right;}
     </style>
-    
+
     <!--start jquery.googleslides-->
     <link href="src/jquery.googleslides.css" rel="stylesheet" type="text/css" />
     <script src="src/jquery.googleslides.js" type="text/javascript"></script>
@@ -24,7 +24,7 @@
         $("#demo1").googleslides({ userid: '115528839112598673902', albumid: '5710317752556741025'});
         $("#demo2").googleslides({ userid: '115528839112598673902', albumid: '5710326335933432353',
          time: 2000,
-         imgmax: 260					
+         imgmax: 260
      });
         $("#demo3").googleslides({ userid: '115528839112598673902', albumid: '5710326910876169537',
          imgmax: 100,
@@ -81,7 +81,7 @@
                          <h3>Usage:</h3>
  <pre>
 $("#demo1").googleslides({
-   userid:'115528839112598673902', 
+   userid:'115528839112598673902',
    albumid:'5710317752556741025'
 });
 </pre>
@@ -96,10 +96,10 @@ $("#demo1").googleslides({
                 </div>
                 <div class="span6">
                  <h3>Usage:</h3>
- <pre>$("#demo2").googleslides( { 
-  userid:'115528839112598673902', 
-  albumid:'5710326335933432353', 
-  time:2000, 
+ <pre>$("#demo2").googleslides( {
+  userid:'115528839112598673902',
+  albumid:'5710326335933432353',
+  time:2000,
   imgmax:260
 });</pre>
           </div>
@@ -114,7 +114,7 @@ $("#demo1").googleslides({
         <div class="span6">
          <h3>Usage:</h3>
  <pre>$("#demo3").googleslides({
-  userid:'115528839112598673902', 
+  userid:'115528839112598673902',
   albumid:'5710326910876169537',
   imgmax:100,
   fadespeed:500,
@@ -130,7 +130,7 @@ $("#demo1").googleslides({
     <ol>
         <li>Add a reference to <strong>jquery.googleslides.css</strong> and <strong>jquery.googleslides.js</strong>:
 <pre>
-&lt;link href="src/jquery.googleslides.css" rel="stylesheet" type="text/css" /&gt; 
+&lt;link href="src/jquery.googleslides.css" rel="stylesheet" type="text/css" /&gt;
 &lt;script src="src/jquery.googleslides.js" type="text/javascript"&gt;&lt;/script&gt;
 </pre>
         </li>
@@ -163,52 +163,52 @@ $('#slides').googleslides({userid:'115528839112598673902', albumid:'571031775255
                 </thead>
                 <tr>
                     <td>userid</td>
-                    <td>'115528839112598673902'</td> 
+                    <td>'115528839112598673902'</td>
                     <td>The Google user ID</td>
                 </tr>
                 <tr>
                     <td>albumid</td>
-                    <td>'5710317752556741025'</td> 
+                    <td>'5710317752556741025'</td>
                     <td>The Google album ID.  <strong>This album should be set to 'Public' visibility.</strong>  'Limited' visibility is supported only if an <strong>authkey</strong> option value is specified.</td>
                 </tr>
                 <tr>
                     <td>imgmax</td>
-                    <td>460</td> 
+                    <td>460</td>
                     <td>Max size, in pixels, of the photos.  (Note: A value of 100 will produce square sized thumbnails.)</td>
                 </tr>
                 <tr>
                     <td>maxresults</td>
-                    <td>100</td> 
+                    <td>100</td>
                     <td>Max number of photos to show from the album.</td>
                 </tr>
                 <tr>
                     <td>random</td>
-                    <td>true</td> 
+                    <td>true</td>
                     <td>Randomize the order the photos are displayed in.</td>
                 </tr>
                 <tr>
                     <td>caption</td>
-                    <td>true</td> 
+                    <td>true</td>
                     <td>Show the photo caption, if available.</td>
                 </tr>
                 <tr>
                     <td>albumlink</td>
-                    <td>true</td> 
+                    <td>true</td>
                     <td>Link the photos to the Google album page.</td>
                 </tr>
                 <tr>
                     <td>time</td>
-                    <td>5000</td> 
+                    <td>5000</td>
                     <td>Time to show each photo before advancing (in milliseconds).</td>
                 </tr>
                 <tr>
                     <td>fadespeed</td>
-                    <td>1000</td> 
+                    <td>1000</td>
                     <td>Fade in/out speed (in milliseconds).</td>
                 </tr>
                 <tr>
                     <td>authkey</td>
-                    <td></td> 
+                    <td></td>
                     <td>If albumid is shared with 'Limited' visibility, you must provide your album <a href="http://support.google.com/picasa/bin/answer.py?hl=en&answer=48446" target="_blank">authkey</a>.</td>
                 </tr>
             </table>
@@ -217,10 +217,10 @@ $('#slides').googleslides({userid:'115528839112598673902', albumid:'571031775255
            <hr/>
             <p id="license">Licensed under The <a target="_blank" href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>
                 </p>
-            <a id="history" href="https://github.com/bradyholt/jquery-googleslides/releases/">Release History</a>
-           
-              
-              
-                <script src="http://bradyholt.github.com/jquery-googleslides/assets/js/bootstrap-tab.js"></script>
+            <a id="history" href="//github.com/bradyholt/jquery-googleslides/releases/">Release History</a>
+
+
+
+                <script src="//bradyholt.github.com/jquery-googleslides/assets/js/bootstrap-tab.js"></script>
             </body>
             </html>
